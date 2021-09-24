@@ -13,7 +13,7 @@
     "url": "git+https://github.com/IanMiranda43/ts-backend-template.git"
   },
   "author": "Ian Miranda",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/IanMiranda43/ts-backend-template/issues"
   },
