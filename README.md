@@ -22,6 +22,8 @@ Before start, check if you have installed and configured the following tools:
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/en/)
+* [Docker](https://www.docker.com/) (optional)
+* an [Postgres](https://www.postgresql.org/) db (optional)
 
 ### Editor requirements
 
@@ -42,13 +44,38 @@ git clone https://github.com/IanMiranda43/ts-backend-template.git
 
 ### Configuring the project
 
-Access the project folder and then set your server port in the `.env` file.
+Access the project folder and then set your server port and DB credentials at the `.env` file.
 
 ```env
 PORT=3000
+
+# DB Config
+DB_HOST=db
+DB_PORT=5432
+DB_NAME=ts-template
+DB_USERNAME=ts-template
+DB_PASSWORD=password
 ```
 
-_The `.env.example` file have this layout, just set your data there and remove the `.example` extension from it._
+_The `.env.example` file have this layout, just copy the entire file, set your data there and remove the `.example` extension from it._
+
+## Running application with Docker
+
+All the Docker configuration is done, that will create an Postgres DB container and the NodeJS app container.
+
+Any environment configurations like ports to be exposed (default is '3333') or witch script need to run to start the app (default it 'start:dev') and even what kind of DB and credentials should your container use, can be setted into the 'docker-compose.yml' file. 
+
+You don't need to config anything into the 'Dockerfile'.
+
+To run the application and DB, run the following command:
+
+```bash
+docker-compose up --build
+```
+
+Your application and DB will be available at the ports that you set for each service.
+
+## Running application directly (without Docker)
 
 ### Installing the dependencies:
 
@@ -56,6 +83,10 @@ In the project folder run de following code. This will create a `node_modules` f
 
 ```bash
 npm install
+
+# or
+
+yarn install
 ```
 
 ### Start the server:
@@ -64,6 +95,10 @@ The script will run the migrations and then start the application at the port se
 
 ```bash
 npm run start:dev
+
+# or
+
+yarn start:dev
 ```
 
 ## Access the 'hello world' page
