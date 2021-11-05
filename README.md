@@ -37,7 +37,7 @@ The system is configured to a better code style with development tools like `Esl
 Clone this repository by running:
 
 ```bash
-git clone git@github.com:IanMiranda43/ts-backend-template.git
+git clone https://github.com/IanMiranda43/ts-backend-template.git
 ```
 
 ### Configuring the project
