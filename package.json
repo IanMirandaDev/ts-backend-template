@@ -6,7 +6,7 @@
     "start:dev": "ts-node-dev --ignore-watch node_modules --transpile-only src/server.ts",
     "build": "npx tsc",
     "prestart:prod": "npm run build",
-    "start:prod": "node src/server.js"
+    "start:prod": "node dist/src/server.js"
   },
   "repository": {
     "type": "git",
