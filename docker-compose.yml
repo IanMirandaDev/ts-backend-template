@@ -6,16 +6,16 @@ services:
     container_name: 'ts-template_app'
     entrypoint: dockerize -wait tcp://db:5432 -timeout 45s ./.docker/entrypoint.sh
     command: "yarn start:dev"
-    tty: true
     ports: 
       - 3333:3333
     volumes: 
-      - .:/home/app
+      - .:/home/node/app
+      - ./node_modules:/home/node/app/node_modules
     depends_on: 
       - db
 
   db: 
-    image: postgres
+    build: ./.docker/postgres
     container_name: 'ts-template_db'
     ports: 
       - 5432:5432

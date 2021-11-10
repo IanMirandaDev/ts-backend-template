@@ -1,5 +1,7 @@
 FROM node:alpine
 
+WORKDIR /home/node/app
+
 RUN apk add --no-cache bash
 
 ENV DOCKERIZE_VERSION v0.6.1
@@ -13,4 +15,4 @@ RUN yarn
 
 COPY . .
 
-WORKDIR /home/app
+USER node
